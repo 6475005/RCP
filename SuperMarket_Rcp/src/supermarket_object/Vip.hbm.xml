@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="supermarket_object">
+	<class name="Vip" table="vip">
+		<id name="vid"><generator class="identity"></generator></id>
+		<property name="username"/>
+		<property name="password"/>
+		<property name="name"/>
+		<property name="level"/>
+		<property name="experience"/>
+		<property name="emails"/>
+		<property name="phone"/>
+		<property name="birthday"/>
+	</class>
+</hibernate-mapping>

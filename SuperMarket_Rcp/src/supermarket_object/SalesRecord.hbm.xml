@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="supermarket_object">
+	<class name="SalesRecord" table="SalesRecord">
+		<id name="Sid"><generator class="identity"></generator></id>
+		<property name="date"/>
+		<set name="products_sr" cascade="all" table="salesrecord_product"
+		 lazy="false">
+			<!-- 关联外键名称 -->
+			<key column="Sid"/>
+			<many-to-many class="Product" column="Pid"/>
+		</set>
+		<map name="sr_map" table="sr_map" lazy="false">
+			<key column="Sid" not-null="true" />
+			<map-key column="Pname" type="string" />
+			<element column="count" type="integer" />
+		</map>
+	</class>
+</hibernate-mapping>

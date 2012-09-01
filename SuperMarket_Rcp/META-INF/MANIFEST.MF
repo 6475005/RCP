@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMarket_Rcp
+Bundle-SymbolicName: SuperMarket_Rcp; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: supermarket_rcp.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: lib/antlr-2.7.6.jar,
+ lib/c3p0-0.9.1.jar,
+ lib/commons-collections-3.1.jar,
+ lib/dom4j-1.6.1.jar,
+ lib/hibernate3.jar,
+ lib/javassist-3.9.0.GA.jar,
+ lib/jta-1.1.jar,
+ lib/log4j-1.2.8.jar,
+ lib/mysql-connector-java-5.1.7-bin.jar,
+ lib/slf4j-api-1.5.8.jar,
+ lib/slf4j-jdk14-1.5.8.jar,
+ lib/slf4j-log4j12-1.5.8.jar,
+ .

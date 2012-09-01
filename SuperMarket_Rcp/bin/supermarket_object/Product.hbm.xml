@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="supermarket_object">
+	<class name="Product" table="Product">
+		<id name="Pid">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" />
+		<property name="price" />
+		<property name="margin" />
+		<property name="state" />
+		<!-- 多对一映射 -->
+		<many-to-one name="type" class="Type" cascade="save-update"
+			not-null="true" lazy="false" />
+		<set name="salesrecord" cascade="all" table="salesrecord_product"
+		 lazy="false">
+			<key column="Pid" />
+			<many-to-many class="SalesRecord" column="Sid" ></many-to-many>
+		</set>
+
+	</class>
+</hibernate-mapping>

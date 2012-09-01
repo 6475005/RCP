@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 数据库连接信息 -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost/supermarket</property>	<!-- gozian1为库名 -->
+		<property name="connection.username">root</property>
+		<property name="connection.password">8840153</property>
+		
+		<!-- 连接池配置信息 -->
+		<property name="hibernate.c3p0.max_size">10</property>
+		<property name="hibernate.c3p0.min">1</property>
+		<property name="hibernate.c3p0.timeout">5000</property>
+		<property name="hibernate.c3p0.max_statement">100</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>	<!-- 空闲时间探测每隔固定时间探测池中连接有没有不可使用的并进行替换 -->
+		<property name="hibernate.c3p0.acquire_increment">2</property>
+		<property name="hibernate.c3p0.validate">true</property>
+		
+		<!-- 数据库方言 -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>	<!-- 自动生成最高效语句 -->
+		
+		<!-- 是否显示SQL语句 -->
+		<property name="show_sql">false</property>
+		<property name="format_sql">true</property>
+		
+		<!-- 自动数据库 -->
+		<!--
+		<property name="hbm2ddl.auto">create</property>
+		 -->
+		<!-- 对象关系映射文件 -->
+		<mapping resource="supermarket_object/root.hbm.xml"></mapping>
+		<mapping resource="supermarket_object/Vip.hbm.xml"></mapping>
+		<mapping resource="supermarket_object/Product.hbm.xml"></mapping>
+		<mapping resource="supermarket_object/SalesRecord.hbm.xml"></mapping>
+		<mapping resource="supermarket_object/Type.hbm.xml"></mapping>
+		
+	</session-factory>
+</hibernate-configuration>
